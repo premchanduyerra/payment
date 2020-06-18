@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Shopping cart</h1> 
+<div class="container"><hr>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product </th>
+            <th scope="col">Name</th>
+            <th scope="col">Product Id</th>
+            <th scope="col">Price</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">image</th>
+            <td><%= productDetailsArr[0].productName %> </td>
+            <td><%= productDetailsArr[0].productId %></td>
+            <td><%= productDetailsArr[0].Amount %></td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>
+<h1>billing info:</h1>
+<div class="container">
+
+    <div class="row">
+      <div class="col-sm">
+        <h4>Name</h4>
+       <h2><%= addressDetailsArr[0].firstName %><%= addressDetailsArr[0].middleName %> </h2>
+      </div>
+      <div class="col-sm">
+        <h4>Email</h4>
+       <h2><%= addressDetailsArr[0].email %> </h2>
+      </div>
+      <div class="col-sm">
+        <h4>Phone</h4>
+        <h2><%= addressDetailsArr[0].phone %> </h2>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+          <h4>Country</h4>
+         <h2><%= addressDetailsArr[0].country %> </h2>
+        </div>
+        <div class="col-sm">
+          <h4>City</h4>
+         <h2><%= addressDetailsArr[0].city %> </h2>
+        </div>
+        <div class="col-sm">
+          <h4>State</h4>
+          <h2><%= addressDetailsArr[0].state %> </h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <h4>postalCode</h4>
+         <h2><%= addressDetailsArr[0].postalCode %> </h2>
+        </div>
+        <div class="col-sm">
+          <h4>City</h4>
+         <h2><%= addressDetailsArr[0].address %> </h2>
+        </div>
+        
+      </div>
+
+<br>
+<br>
+<h2>delivery info: <span> <%= deliveryDetailsArr[0].type %> </span> </h2>
+<center>
+   
+</center>
+<br>
+<br>
+<h2>TotalAmount:</h2>
+<%= deliveryDetailsArr[0].amount+ productDetailsArr[0].Amount %>
+
+<br>
+<center>
+    <form action="/billing" method="post">
+    <button type="submit" class="btn btn-success">proceed payment</button>
+</form>
+</center>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+<form action="/deliveryMethod" method="post">
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+          <input type="radio" name="radio" aria-label="Radio button for following text input" required value="freeDelivery">
+          </div>
+        </div>
+        <input type="text" class="form-control"  aria-label="Text input with radio button" placeholder="Free Delivery $0.00/Delivery in 7 to 10 business days" readonly>
+      </div>
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+          <input type="radio" name="radio" aria-label="Radio button for following text input" required value="standardDelivery">
+          </div>
+        </div>
+        <input type="text" class="form-control"  aria-label="Text input with radio button" placeholder="standard Delivery $7.00/Delivery in 5 to 7 business days" readonly>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+          <input type="radio" name="radio" aria-label="Radio button for following text input" required value="expressDelivery">
+          </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button"placeholder="Express Delivery $29.00/Delivery in1 business day" readonly>
+      </div>
+<br>
+            <button type="submit" class="btn btn-success " >submit</button>
+</form>
+   
+  
+    </div>
+</body>
+</html>

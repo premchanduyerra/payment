@@ -20,19 +20,20 @@
 
 
 
-userId:<input type="text" name="userId" value="<%= userIds[0] %>" readonly > <br>
-productId<input type="text" name="productId" value="<%= productIds[0] %>" readonly > <br>
+userId:<input type="text" name="userId" value="<%= userIds %>" readonly > <br>
+productId:<input type="text" name="productId" value="<%= productIds %>" readonly > <br>
 <input type="text" id="firstName" name="firstName" placeholder="First Name" required> <br>
 <input type="text" id="lastName"  name="lastName" placeholder="Last Name" required> <br>
 <input type="text" id="middleName" name="middleName" placeholder="Middle Name" > <br>
-<input type="text" id="company" name="company" placeholder="Company" required> <br>
+<input type="text" id="company" name="company" placeholder="Company" > <br>
 <input type="email" id="email" name="email" placeholder="Email" required> <br>
 <input type="text" id="phone" name="phone" placeholder="Phone" required> <br>
 <input type="text" id="country" name="country" placeholder="Country" required> <br>
 <input type="text" id="city" name="city" placeholder="City" required> <br>
 <input type="text" id="state" name="state" placeholder="State/Provinence" required> <br>
 <input type="text" id="postalCode" name="postalCode" placeholder="Zip/Postal Code" required> <br>
-<textarea name="address" id="address"  cols="30" rows="10" placeholder="address" required></textarea> <br>
+<input type="text" id="address" name="address" placeholder="address" required> <br>
+
 
 <button type="submit" class="btn btn-success">confirm</button>
 </form>
@@ -52,7 +53,7 @@ productId<input type="text" name="productId" value="<%= productIds[0] %>" readon
             <%= data.country%>
             <h3>address:</h3>
             <%= data.address%>
-        <script>console.log( data)</script>
+            
             <button  
             class="btn btn-success"
              onclick='addAddress("<%= data._id%>","<%= data.firstName%>","<%= data.lastName%>","<%= data.middleName%>","<%= data.company%>","<%= data.email%>","<%= data.phone%>","<%= data.country%>","<%= data.city%>","<%= data.state%>","<%= data.postalCode%>","<%= data.address%>")' 
@@ -62,12 +63,15 @@ productId<input type="text" name="productId" value="<%= productIds[0] %>" readon
         </div>
 
 
-    <%})      %>
+    <%});      %>
 </div>
 <script>
+    function add(){
+        alert("hy");
+    }
     function addAddress(Id,firstName,lastName,middleName,company,email,phone,country,city,state,postalCode,address){
-        alert(country);
-        document.getElementById("firstName").setAttribute('value',firstName);
+       // alert("httt");
+       document.getElementById("firstName").setAttribute('value',firstName);
        document.getElementById("lastName").setAttribute('value',lastName);
         document.getElementById("middleName").setAttribute('value',middleName);
         document.getElementById("company").setAttribute('value',company);
@@ -77,7 +81,7 @@ productId<input type="text" name="productId" value="<%= productIds[0] %>" readon
         document.getElementById("city").setAttribute('value',city);
         document.getElementById("state").setAttribute('value',state);
         document.getElementById("postalCode").setAttribute('value',postalCode);
-        document.getElementById("address").innerHTML=address;
+        document.getElementById("address").setAttribute('value',address);
         document.getElementById("prevAddress").setAttribute('style','visibility: hidden');
        
     }
